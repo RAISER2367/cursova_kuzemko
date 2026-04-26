@@ -110,6 +110,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Open Window";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lstWindows
             // 
@@ -128,6 +129,7 @@
             this.btnFocus.TabIndex = 9;
             this.btnFocus.Text = "Focus";
             this.btnFocus.UseVisualStyleBackColor = true;
+            this.btnFocus.Click += new System.EventHandler(this.btnFocus_Click);
             // 
             // btnChangeStyle
             // 
@@ -137,6 +139,7 @@
             this.btnChangeStyle.TabIndex = 10;
             this.btnChangeStyle.Text = "Change Style";
             this.btnChangeStyle.UseVisualStyleBackColor = true;
+            this.btnChangeStyle.Click += new System.EventHandler(this.btnChangeStyle_Click);
             // 
             // btnSave
             // 
@@ -146,6 +149,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save to file";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtNewColor
             // 
@@ -162,6 +166,7 @@
             this.btnLoad.TabIndex = 13;
             this.btnLoad.Text = "Load from file";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnDelete
             // 
@@ -171,6 +176,7 @@
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Close Window";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
@@ -282,6 +288,7 @@
             this.Controls.Add(this.txtX1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

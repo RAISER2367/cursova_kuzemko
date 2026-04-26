@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "X:\\cursova_kuzemko\\\u0441#\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\panelcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|X:\\cursova_kuzemko\\\u0441#\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|X:\\cursova_kuzemko\\\u0441#\\panelcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:panelcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\headerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|X:\\cursova_kuzemko\\\u0441#\\headerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:headerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\screenpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|X:\\cursova_kuzemko\\\u0441#\\screenpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:screenpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|x:\\cursova_kuzemko\\\u0441#\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{7E8E519B-492E-4479-92C4-70EAAF91B39D}|\u0441#.csproj|solutionrelative:classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "X:\\cursova_kuzemko\\\u0441#\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAmwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T01:14:53.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ClassDiagram1.cd",
               "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\ClassDiagram1.cd",
               "RelativeDocumentMoniker": "ClassDiagram1.cd",
@@ -55,51 +68,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "X:\\cursova_kuzemko\\\u0441#\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowDEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-25T22:40:58.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "PanelCollection.cs",
               "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\PanelCollection.cs",
               "RelativeDocumentMoniker": "PanelCollection.cs",
               "ToolTip": "X:\\cursova_kuzemko\\\u0441#\\PanelCollection.cs",
               "RelativeToolTip": "PanelCollection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-25T22:39:12.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "HeaderPanel.cs",
               "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\HeaderPanel.cs",
               "RelativeDocumentMoniker": "HeaderPanel.cs",
               "ToolTip": "X:\\cursova_kuzemko\\\u0441#\\HeaderPanel.cs",
               "RelativeToolTip": "HeaderPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-25T22:38:32.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ScreenPanel.cs",
               "DocumentMoniker": "X:\\cursova_kuzemko\\\u0441#\\ScreenPanel.cs",
               "RelativeDocumentMoniker": "ScreenPanel.cs",
               "ToolTip": "X:\\cursova_kuzemko\\\u0441#\\ScreenPanel.cs",
               "RelativeToolTip": "ScreenPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-25T22:38:06.116Z",
               "EditorCaption": ""

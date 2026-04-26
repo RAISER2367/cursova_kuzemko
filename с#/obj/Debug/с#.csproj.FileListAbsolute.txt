@@ -1,0 +1,10 @@
+X:\cursova_kuzemko\с#\bin\Debug\с#.exe.config
+X:\cursova_kuzemko\с#\bin\Debug\с#.exe
+X:\cursova_kuzemko\с#\bin\Debug\с#.pdb
+X:\cursova_kuzemko\с#\obj\Debug\с#.csproj.AssemblyReference.cache
+X:\cursova_kuzemko\с#\obj\Debug\с_.Form1.resources
+X:\cursova_kuzemko\с#\obj\Debug\с_.Properties.Resources.resources
+X:\cursova_kuzemko\с#\obj\Debug\с#.csproj.GenerateResource.cache
+X:\cursova_kuzemko\с#\obj\Debug\с#.csproj.CoreCompileInputs.cache
+X:\cursova_kuzemko\с#\obj\Debug\с#.exe
+X:\cursova_kuzemko\с#\obj\Debug\с#.pdb
