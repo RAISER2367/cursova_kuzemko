@@ -38,6 +38,15 @@ UiFrame& UiFrame::operator=(const UiFrame& other) {
     return *this;
 }
 
+UiFrame& UiFrame::operator=(UiFrame&& other) noexcept {
+    if (this != &other) {
+        left = other.left; top = other.top; right = other.right; bottom = other.bottom;
+        fillColor = std::move(other.fillColor);
+        other.left = 0; other.top = 0; other.right = 0; other.bottom = 0;
+    }
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& os, const UiFrame& frame) {
     os << frame.left << " " << frame.top << " " << frame.right << " " << frame.bottom << " " << frame.fillColor;
     return os;

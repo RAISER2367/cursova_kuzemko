@@ -17,7 +17,6 @@ namespace с_
         public Form1()
         {
             InitializeComponent();
-
             btnAdd.Enabled = false;
 
             txtX1.TextChanged += CheckInputFields;
@@ -27,6 +26,10 @@ namespace с_
             txtBg.TextChanged += CheckInputFields;
             txtTitle.TextChanged += CheckInputFields;
             txtTextCol.TextChanged += CheckInputFields;
+
+            // Автозавантаження при запуску
+            currentScreen.ImportFromFile("panels_config.txt");
+            UpdateUI();
         }
 
         private void CheckInputFields(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace с_
         private void UpdateUI()
         {
             lstWindows.Items.Clear();
+            // Цикл працює за рахунок кастомного ітератора (Вимога 3)
             foreach (var panel in currentScreen)
             {
                 lstWindows.Items.Add(panel.GetDescription());
@@ -67,7 +71,7 @@ namespace с_
                 }
 
                 var hp = new HeaderPanel(left, top, right, bottom, txtBg.Text, txtTitle.Text, txtTextCol.Text);
-                currentScreen.InsertPanel(hp);
+                currentScreen.InsertPanel(hp); // Додавання на 0-ву позицію
                 UpdateUI();
 
                 ResetForm();
@@ -87,48 +91,25 @@ namespace с_
             {
                 currentScreen.BringToFront(lstWindows.SelectedIndex);
                 UpdateUI();
-                lstWindows.SelectedIndex = 0; // Залишаємо фокус на верхньому елементі
+                lstWindows.SelectedIndex = 0;
             }
         }
 
         private void btnChangeStyle_Click(object sender, EventArgs e)
         {
-            if (lstWindows.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(txtNewColor.Text))
             {
-                MessageBox.Show("Оберіть елемент зі списку для застосування стилю.");
+                MessageBox.Show("Введіть колір для масового оновлення!");
                 return;
             }
 
-            int iteratorIndex = 0;
-            ScreenPanel activePanel = null;
-
+            // Масове оновлення стилю для демонстрації поліморфізму
             foreach (var p in currentScreen)
             {
-                if (iteratorIndex == lstWindows.SelectedIndex)
-                {
-                    activePanel = p;
-                    break;
-                }
-                iteratorIndex++;
+                p.ApplyTheme(txtNewColor.Text);
             }
 
-            if (activePanel != null)
-            {
-                string resultMsg = activePanel.ApplyTheme(txtNewColor.Text);
-                MessageBox.Show(resultMsg, "Демонстрація поліморфізму");
-                UpdateUI();
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            currentScreen.ExportToFile("panels_config.txt");
-            MessageBox.Show("Конфігурацію збережено у файл panels_config.txt");
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            currentScreen.ImportFromFile("panels_config.txt");
+            MessageBox.Show("Стиль успішно оновлено! Завдяки поліморфізму змінився колір шрифту заголовка.", "Демонстрація поліморфізму");
             UpdateUI();
         }
 
@@ -145,12 +126,58 @@ namespace с_
             }
         }
 
+        // ======================================================
+        // КНОПКИ ДЛЯ ТЕСТУВАННЯ ПЕРЕВАНТАЖЕНИХ ОПЕРАТОРІВ
+        // ======================================================
+
+        private void btnShift_Click(object sender, EventArgs e)
+        {
+            if (lstWindows.SelectedIndex != -1)
+            {
+                // Зсув вибраної панелі на 20 пікселів вправо-вниз
+                currentScreen.ShiftPanel(lstWindows.SelectedIndex, 20);
+                MessageBox.Show("Координати панелі зсунуто на +20 (Демонстрація оператора +=)");
+                UpdateUI();
+            }
+            else
+            {
+                MessageBox.Show("Оберіть панель для зсуву!");
+            }
+        }
+
+        private void btnCombine_Click(object sender, EventArgs e)
+        {
+            if (lstWindows.Items.Count >= 2)
+            {
+                HeaderPanel combined = currentScreen.CombinePanels(0, 1);
+                MessageBox.Show("Результат накладання перших двох панелей:\n\n" + combined.GetDescription(), "Демонстрація оператора +");
+            }
+            else
+            {
+                MessageBox.Show("Для накладання потрібно щонайменше 2 панелі у списку!");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            currentScreen.ExportToFile("panels_config.txt");
+            MessageBox.Show("Конфігурацію збережено у файл panels_config.txt");
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            currentScreen.ImportFromFile("panels_config.txt");
+            UpdateUI();
+        }
+
+        // Збереження перед закриттям форми
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            currentScreen.ExportToFile("panels_config.txt");
+        }
+
         private void label3_Click(object sender, EventArgs e) { }
         private void label7_Click(object sender, EventArgs e) { }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void Form1_Load(object sender, EventArgs e) { }
     }
 }

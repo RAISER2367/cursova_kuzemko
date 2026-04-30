@@ -2,13 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace с_
 {
-    // Реалізуємо IEnumerable для підтримки foreach
     public class PanelCollection : IEnumerable<HeaderPanel>
     {
         private List<HeaderPanel> _panels = new List<HeaderPanel>();
@@ -33,13 +29,32 @@ namespace с_
             if (idx >= 0 && idx < _panels.Count) _panels.RemoveAt(idx);
         }
 
-        // Робота з файлом (тепер використовуємо розділювач '|')
+        // Демонстрація зсуву (оператор +=)
+        public void ShiftPanel(int idx, int offset)
+        {
+            if (idx >= 0 && idx < _panels.Count)
+            {
+                _panels[idx] += offset;
+            }
+        }
+
+        // Демонстрація накладання (оператор +)
+        public HeaderPanel CombinePanels(int idx1, int idx2)
+        {
+            if (idx1 >= 0 && idx1 < _panels.Count && idx2 >= 0 && idx2 < _panels.Count)
+            {
+                return _panels[idx1] + _panels[idx2];
+            }
+            return null;
+        }
+
+        // Робота з файлом через ООП підхід
         public void ExportToFile(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
                 foreach (var p in _panels)
-                    writer.WriteLine($"{p.LeftX}|{p.TopY}|{p.RightX}|{p.BottomY}|{p.BackgroundColor}|{p.HeaderText}|{p.FontColor}");
+                    writer.WriteLine(p.ToString()); // Використання аналога <<
             }
         }
 
@@ -48,11 +63,12 @@ namespace с_
             if (!File.Exists(filePath)) return;
             _panels.Clear();
             string[] lines = File.ReadAllLines(filePath);
-            foreach (var line in lines)
+
+            // Йдемо з кінця, щоб при Insert(0, ...) зберігся правильний порядок
+            for (int i = lines.Length - 1; i >= 0; i--)
             {
-                var parts = line.Split('|');
-                if (parts.Length == 7)
-                    _panels.Add(new HeaderPanel(int.Parse(parts[0]), int.Parse(parts[1]), int.Parse(parts[2]), int.Parse(parts[3]), parts[4], parts[5], parts[6]));
+                if (!string.IsNullOrWhiteSpace(lines[i]))
+                    InsertPanel(HeaderPanel.Parse(lines[i])); // Використання аналога >>
             }
         }
 
@@ -68,7 +84,6 @@ namespace с_
             return GetEnumerator();
         }
 
-        // Внутрішній КЛАС-ІТЕРАТОР
         private class PanelIterator : IEnumerator<HeaderPanel>
         {
             private readonly PanelCollection _source;

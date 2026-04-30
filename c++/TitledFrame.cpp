@@ -6,8 +6,34 @@ TitledFrame::TitledFrame(int l, int t, int r, int b, std::string bg, std::string
     : UiFrame(l, t, r, b, bg), headerText(header), fontColor(fontC) {
 }
 
+TitledFrame::TitledFrame(const TitledFrame& other)
+    : UiFrame(other), headerText(other.headerText), fontColor(other.fontColor) {
+}
+
+TitledFrame::TitledFrame(TitledFrame&& other) noexcept
+    : UiFrame(std::move(other)), headerText(std::move(other.headerText)), fontColor(std::move(other.fontColor)) {
+}
+
+TitledFrame& TitledFrame::operator=(const TitledFrame& other) {
+    if (this != &other) {
+        UiFrame::operator=(other);
+        headerText = other.headerText;
+        fontColor = other.fontColor;
+    }
+    return *this;
+}
+
+TitledFrame& TitledFrame::operator=(TitledFrame&& other) noexcept {
+    if (this != &other) {
+        UiFrame::operator=(std::move(other));
+        headerText = std::move(other.headerText);
+        fontColor = std::move(other.fontColor);
+    }
+    return *this;
+}
+
 void TitledFrame::updateTheme(std::string newColor) {
-    this->fontColor = newColor; // Змінюємо колір тексту замість фону
+    this->fontColor = newColor;
 }
 
 void TitledFrame::printDetails() const {

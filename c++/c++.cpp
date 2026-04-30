@@ -7,12 +7,13 @@ using namespace std;
 
 void printMenu() {
     cout << "\n=== СИСТЕМА УПРАВЛІННЯ ВІКНАМИ ===" << endl;
-    cout << "[1] Створити новий фрейм" << endl;
+    cout << "[1] Створити новий фрейм (на 0 позицію)" << endl;
     cout << "[2] Показати всі існуючі фрейми" << endl;
     cout << "[3] Перемістити фрейм на передній план" << endl;
     cout << "[4] Видалити фрейм за його ID" << endl;
     cout << "[5] Застосувати нову тему (зміна кольору)" << endl;
-    cout << "[6] Робота з файлами (Імпорт/Експорт)" << endl;
+    cout << "[6] Робота з файлами (Експорт)" << endl;
+    cout << "[7] Тестувати оператори + та +=" << endl;
     cout << "[0] Завершити роботу" << endl;
     cout << "==================================" << endl;
     cout << "Оберіть дію: ";
@@ -23,6 +24,7 @@ int main() {
     SetConsoleOutputCP(65001);
 
     FrameManager manager;
+    manager.importData("frames_archive.txt"); // Автозавантаження
     int action;
 
     while (true) {
@@ -35,6 +37,7 @@ int main() {
         }
 
         if (action == 0) {
+            manager.exportData("frames_archive.txt"); // Автозбереження
             cout << "Програма завершена." << endl;
             break;
         }
@@ -98,20 +101,24 @@ int main() {
         }
 
         case 6: {
-            int subAction;
-            cout << "Оберіть операцію (1 - Експортувати у файл, 2 - Імпортувати з файлу): ";
-            cin >> subAction;
-            if (subAction == 1) {
-                manager.exportData("frames_archive.txt");
-                cout << ">>> Дані успішно збережено." << endl;
-            }
-            else if (subAction == 2) {
-                manager.importData("frames_archive.txt");
-                cout << ">>> Дані успішно завантажено." << endl;
-            }
-            else {
-                cout << "Помилка: невідома операція." << endl;
-            }
+            manager.exportData("frames_archive.txt");
+            cout << ">>> Дані успішно збережено." << endl;
+            break;
+        }
+
+        case 7: {
+            cout << "\n--- Демонстрація операторів ---" << endl;
+            UiFrame f1(10, 10, 40, 40, "Red");
+            UiFrame f2(20, 20, 50, 50, "Blue");
+            cout << "Фрейм 1: " << f1 << endl;
+            cout << "Фрейм 2: " << f2 << endl;
+
+            UiFrame f3 = f1 + f2;
+            cout << "Об'єднання (спільна оболонка) через +: \n" << f3 << endl;
+
+            cout << "\nДо зсуву: " << f1 << endl;
+            f1 += 15;
+            cout << "Після зсуву на +15 (через +=): " << f1 << endl;
             break;
         }
 
